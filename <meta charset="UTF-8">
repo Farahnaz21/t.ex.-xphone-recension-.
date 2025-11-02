@@ -95,6 +95,9 @@
 </head>
 <body>
   <div class="container">
+    <h1>Välkommen till min XPhone-recension!</h1>
+    <p>Detta är en testversion av min GitHub Pages-sida.</p>
+    
     <h2>Recension: XPhone 12 — är den värd pengarna?</h2>
     <p class="meta">Publicerad 2025-10-01 · Av Redaktionen</p>
 
@@ -114,9 +117,12 @@
 
     <button id="themeToggle">Byt tema</button>
 
-    <!-- Här är den ENDA footer som behövs -->
+    <!-- Footer with links to privacy policy and contact page -->
     <footer>
-      <p>&copy; <span id="year"></span> XPhone Recensioner. <a href="privacy-policy.md">Integritetspolicy</a></p>
+      <p>&copy; <span id="year"></span> XPhone Recensioner. 
+        <a href="contact.html">Kontakt</a> | 
+        <a href="privacy-policy.md">Integritetspolicy</a>
+      </p>
     </footer>
   </div>
 
