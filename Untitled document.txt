@@ -114,8 +114,12 @@
 
     <button id="themeToggle">Byt tema</button>
 
+    <!-- Footer with links to privacy policy and contact page -->
     <footer>
-      <p>&copy; <span id="year"></span> XPhone Recensioner</p>
+      <p>&copy; <span id="year"></span> XPhone Recensioner. 
+        <a href="contact.html">Kontakt</a> | 
+        <a href="privacy-policy.md">Integritetspolicy</a>
+      </p>
     </footer>
   </div>
 
