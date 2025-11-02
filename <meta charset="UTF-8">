@@ -114,8 +114,9 @@
 
     <button id="themeToggle">Byt tema</button>
 
+    <!-- Här är den ENDA footer som behövs -->
     <footer>
-      <p>&copy; <span id="year"></span> XPhone Recensioner</p>
+      <p>&copy; <span id="year"></span> XPhone Recensioner. <a href="privacy-policy.md">Integritetspolicy</a></p>
     </footer>
   </div>
 
