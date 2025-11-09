@@ -1,43 +1,118 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="sv" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integritetspolicy</title>
+  <title>Integritetspolicy - XPhone Recensioner</title>
+
   <style>
     body {
       font-family: 'Helvetica Neue', Arial, sans-serif;
-      margin: 40px;
+      margin: 0;
+      padding: 0;
       line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #222;
+      background-color: #ffffff;
+      color: #111111;
+      transition: background-color 0.3s, color 0.3s;
     }
-    h1 { color: #007bff; }
-    a { color: #007bff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+
+    [data-theme="dark"] {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 1.2em;
+    }
+
+    #themeToggle {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 20px 0;
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    #themeToggle:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
+    }
+
+    [data-theme="dark"] footer {
+      border-top-color: #333;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      h2 { font-size: 1.5rem; }
+      p { font-size: 0.95rem; }
+      #themeToggle { width: 100%; }
+    }
   </style>
 </head>
 <body>
-  <h1>Integritetspolicy</h1>
-  <p>Senast uppdaterad: 2025-11-01</p>
+  <div class="container">
+    <h1>Integritetspolicy</h1>
+    <p>Denna sida beskriver hur vi samlar in och hanterar dina personuppgifter på XPhone Recensioner.</p>
 
-  <p>Din integritet är viktig för oss. Denna sida beskriver hur vi samlar in, använder och skyddar dina personuppgifter när du besöker vår webbplats <strong>XPhone Recensioner</strong>.</p>
+    <h2>Vilka uppgifter vi samlar in</h2>
+    <p>Vi samlar endast in de uppgifter du själv lämnar via kontaktformulär eller kommentarer.</p>
 
-  <h2>1. Insamling av information</h2>
-  <p>Vi samlar inte in personlig information utan ditt samtycke. Vissa data, som anonym statistik via Google Analytics eller Google Ads, kan samlas in automatiskt för att förbättra webbplatsens prestanda.</p>
+    <h2>Hur vi använder uppgifterna</h2>
+    <p>Uppgifterna används för att svara på frågor, förbättra innehåll och säkerställa en bättre användarupplevelse.</p>
 
-  <h2>2. Användning av cookies</h2>
-  <p>Webbplatsen kan använda cookies för att förbättra användarupplevelsen. Du kan välja att blockera cookies via din webbläsare.</p>
+    <h2>Cookies</h2>
+    <p>Vi använder endast nödvändiga cookies för funktioner som temat växling (ljust/mörkt läge).</p>
 
-  <h2>3. Tredjepartsinnehåll</h2>
-  <p>Vår webbplats kan innehålla annonser från Google Ads. Google kan använda cookies för att visa relevanta annonser baserade på ditt beteende.</p>
+    <button id="themeToggle" aria-label="Byt mellan ljust och mörkt tema">🌙 Mörkt läge</button>
 
-  <h2>4. Dina rättigheter</h2>
-  <p>Du har rätt att begära tillgång till, rätta eller radera personuppgifter som rör dig enligt GDPR.</p>
+    <footer>
+      <p>&copy; <span id="year"></span> XPhone Recensioner. 
+        <a href="index.html">Hem</a> | 
+        <a href="contact.html">Kontakt</a>
+      </p>
+    </footer>
+  </div>
 
-  <h2>5. Kontakt</h2>
-  <p>För frågor om integritetspolicyn, vänligen kontakta oss via <a href="contact.html">kontaktformuläret</a>.</p>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('themeToggle');
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      themeToggle.textContent = savedTheme === 'dark' ? '☀️ Ljust läge' : '🌙 Mörkt läge';
 
-  <p><a href="index.html">⬅️ Tillbaka till startsidan</a></p>
+      themeToggle.onclick = function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        themeToggle.textContent = newTheme === 'dark' ? '☀️ Ljust läge' : '🌙 Mörkt läge';
+      };
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+  </script>
 </body>
 </html>
