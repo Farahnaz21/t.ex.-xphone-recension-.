@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sv" data-theme="light">
+<html lang="sv">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,119 +11,137 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6329597805915914" crossorigin="anonymous"></script>
 
   <style>
+    /* Grundläggande stil */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
+      padding: 0;
+      line-height: 1.6;
       background-color: #fff;
       color: #111;
       transition: background-color 0.3s, color 0.3s;
     }
+
     [data-theme="dark"] {
       background-color: #121212;
       color: #f0f0f0;
     }
-    .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
     h1, h2 { margin-bottom: 10px; }
     .meta { color: #666; font-size: 0.9rem; margin-bottom: 20px; }
     p { margin-bottom: 1.2em; font-size: 1rem; }
+
     #themeToggle {
       display: inline-block;
       padding: 10px 20px;
+      margin: 20px 0;
+      cursor: pointer;
       background-color: #007bff;
       color: #fff;
       border: none;
-      cursor: pointer;
       border-radius: 5px;
       transition: background-color 0.3s;
     }
+
     #themeToggle:hover { background-color: #0056b3; }
+
     .ads { margin: 30px 0; text-align: center; }
+
     footer {
       text-align: center;
       padding: 20px;
+      font-size: 0.9rem;
+      color: #666;
       border-top: 1px solid #ddd;
       margin-top: 40px;
     }
+
     [data-theme="dark"] footer { border-top-color: #333; color: #aaa; }
+
     @media (max-width: 600px) {
       h2 { font-size: 1.5rem; }
       p { font-size: 0.95rem; }
+      #themeToggle { width: 100%; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Recension: XPhone 12</h1>
-    <p class="meta">Publicerad: 9 november 2025 | Författare: Redaktionen</p>
+<div class="container">
+  <h1>Recension: XPhone 12</h1>
+  <h2>Recension: XPhone 12 — är den värd pengarna?</h2>
+  <p>XPhone 12 är en kraftfull smartphone med imponerande kamera, lång batteritid och snabb prestanda. Här går vi igenom alla funktioner och bedömer om den är värd sitt pris.</p>
+  <p><strong>Ingress:</strong> XPhone 12 lovar snabb prestanda och bättre batteritid. Vi testade kameran, skärmen och vardagsbatteriet.</p>
 
-    <h2>Recension: XPhone 12 — är den värd pengarna?</h2>
-    <p>XPhone 12 är en kraftfull smartphone med imponerande kamera, lång batteritid och snabb prestanda. Här går vi igenom alla funktioner och bedömer om den är värd sitt pris.</p>
-    <p><strong>Ingress:</strong> XPhone 12 lovar snabb prestanda och bättre batteritid. Vi testade kameran, skärmen och vardagsbatteriet.</p>
+  <h2>Kamera</h2>
+  <p>Kameran tar skarpa bilder även i dåligt ljus. Video i 4K fungerar utan problem och bilderna är mycket detaljrika.</p>
 
-    <h2>Kamera</h2>
-    <div id="article-content">
-      <p>Artikeln fortsätter med djupanalys, tester och jämförelser med tidigare modeller.</p>
-      <p>Kameran imponerar med detaljer och färgåtergivning i olika ljusförhållanden.</p>
-      <p>Batteritiden var bättre än föregående modell och höll över dagen vid normal användning.</p>
-      <p>Skärmen är skarp och ljusstark, perfekt för media och spel.</p>
-      <p>Prestandan är snabb, med inga märkbara fördröjningar vid multitasking.</p>
-      <p>Byggkvaliteten känns premium och telefonen ligger bra i handen.</p>
-    </div>
-
-    <h2>Batteritid</h2>
-    <p>Batteriet räcker lätt en hel dag vid normal användning, och snabbladdning gör att du snabbt är tillbaka i full kapacitet.</p>
-
-    <h2>Prestanda</h2>
-    <p>XPhone 12 hanterar appar och spel utan lagg. Den kraftfulla processorn gör multitasking smidigt.</p>
-
-    <button id="themeToggle" aria-label="Byt mellan ljust och mörkt tema">🌙 Mörkt läge</button>
-
-    <footer>
-      &copy; <span id="year"></span> XPhone Recensioner.
-      <a href="index.html">Hem</a> |
-      <a href="contact.html">Kontakt</a> |
-      <a href="privacy-policy.html">Integritetspolicy</a>
-    </footer>
+  <div id="article-content">
+    <p>Artikeln fortsätter med djupanalys, tester och jämförelser med tidigare modeller.</p>
+    <p>Kameran imponerar med detaljer och färgåtergivning i olika ljusförhållanden.</p>
+    <p>Batteritiden var bättre än föregående modell och höll över dagen vid normal användning.</p>
+    <p>Skärmen är skarp och ljusstark, perfekt för media och spel.</p>
+    <p>Prestandan är snabb, med inga märkbara fördröjningar vid multitasking.</p>
+    <p>Byggkvaliteten känns premium och telefonen ligger bra i handen.</p>
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Tema-switch
-      const themeToggle = document.getElementById('themeToggle');
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      themeToggle.textContent = savedTheme === 'dark' ? '☀️ Ljust läge' : '🌙 Mörkt läge';
+  <h2>Batteritid</h2>
+  <h2>Prestanda</h2>
+  <p>XPhone 12 hanterar appar och spel utan lagg. Den kraftfulla processorn gör multitasking smidigt.</p>
 
-      themeToggle.onclick = function() {
-        const current = document.documentElement.getAttribute('data-theme');
-        const next = current === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-        themeToggle.textContent = next === 'dark' ? '☀️ Ljust läge' : '🌙 Mörkt läge';
-      };
+  <button id="themeToggle" aria-label="Byt mellan ljust och mörkt tema">🌙 Mörkt läge</button>
 
-      // Sätt årtal
-      document.getElementById('year').textContent = new Date().getFullYear();
+  <footer>
+    &copy; <span id="year"></span> XPhone Recensioner. 
+    <a href="index.html">Hem</a> | 
+    <a href="contact.html">Kontakt</a> | 
+    <a href="privacy-policy.html">Integritetspolicy</a>
+  </footer>
+</div>
 
-      // Dynamiska AdSense-annonser var 3:e paragraf
-      const contentDiv = document.getElementById('article-content');
-      const paragraphs = contentDiv.querySelectorAll('p');
-      paragraphs.forEach((p, index) => {
-        if ((index + 1) % 3 === 0) {
-          const adDiv = document.createElement('div');
-          adDiv.className = 'ads';
-          adDiv.innerHTML = `
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-6329597805915914"
-                 data-ad-slot="1234567890"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>`;
-          p.after(adDiv);
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        }
-      });
-    });
-  </script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Tema-switch
+  const themeToggle = document.getElementById('themeToggle');
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  themeToggle.textContent = savedTheme === 'dark' ? '☀️ Ljust läge' : '🌙 Mörkt läge';
+
+  themeToggle.onclick = function() {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    themeToggle.textContent = next === 'dark' ? '☀️ Ljust läge' : '🌙 Mörkt läge';
+  };
+
+  // Sätt årtal
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Dynamiska AdSense-annonser var 3:e paragraf
+  const contentDiv = document.getElementById('article-content');
+  const paragraphs = contentDiv.querySelectorAll('p');
+  paragraphs.forEach((p, index) => {
+    if ((index + 1) % 3 === 0) {
+      const adDiv = document.createElement('div');
+      adDiv.className = 'ads';
+      adDiv.innerHTML = `
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-6329597805915914"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>`;
+      p.after(adDiv);
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  });
+});
+</script>
 </body>
 </html>
