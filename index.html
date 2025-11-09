@@ -11,7 +11,29 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6329597805915914" crossorigin="anonymous"></script>
 
   <style>
-    /* Grundläggande stil */
+   <button id="themeToggle" aria-label="Byt mellan ljust och mörkt tema">🌙 Mörkt läge</button>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Hämta temaknappen och sparat tema
+  const themeToggle = document.getElementById('themeToggle');
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  
+  // Sätt knapptext beroende på sparat tema
+  themeToggle.textContent = savedTheme === 'dark' ? '☀️ Ljust läge' : '🌙 Mörkt läge';
+
+  // Klick-event för att byta tema
+  themeToggle.addEventListener('click', function() {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    themeToggle.textContent = next === 'dark' ? '☀️ Ljust läge' : '🌙 Mörkt läge';
+  });
+});
+</script>
+ 
     body {
       font-family: Arial, sans-serif;
       margin: 0;
