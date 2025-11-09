@@ -19,6 +19,28 @@ document.addEventListener('DOMContentLoaded', function() {
   const themeToggle = document.getElementById('themeToggle');
   const savedTheme = localStorage.getItem('theme') || 'light';
   document.documentElement.setAttribute('data-theme', savedTheme);
+
+  // Sätt knapptext beroende på sparat tema (Unicode-escape för emojis)
+  themeToggle.textContent = savedTheme === 'dark' ? '\u2600\uFE0F Ljust läge' : '\u1F319 Mörkt läge';
+
+  // Klick-event för att byta tema
+  themeToggle.addEventListener('click', function() {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    themeToggle.textContent = next === 'dark' ? '\u2600\uFE0F Ljust läge' : '\u1F319 Mörkt läge';
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Hämta temaknappen och sparat tema
+  const themeToggle = document.getElementById('themeToggle');
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
   
   // Sätt knapptext beroende på sparat tema
   themeToggle.textContent = savedTheme === 'dark' ? '☀️ Ljust läge' : '🌙 Mörkt läge';
