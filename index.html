@@ -127,16 +127,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Dynamiska AdSense-annonser var 3:e paragraf
   const contentDiv = document.getElementById('article-content');
-  const paragraphs = contentDiv.querySelectorAll('p'); // rad 129
-  paragraphs.forEach(function(p, index) {               // rad 133
-    if ((index + 1) % 3 === 0) {                       // rad 134
-      const adDiv = document.createElement('div');     // rad 135
-      adDiv.className = 'ads';                         // rad 136
-      adDiv.innerHTML = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6329597805915914" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>'; // rad 137
-      p.after(adDiv);                                  // rad 138
-      try {                                            // rad 139
-        (adsbygoogle = window.adsbygoogle || []).push({}); // rad 141
-      } catch(e) { console.error(e); }                // rad 141
+  const paragraphs = contentDiv.querySelectorAll('p');
+
+  paragraphs.forEach(function(p, index) {
+    if ((index + 1) % 3 === 0) {
+      const adDiv = document.createElement('div');
+      adDiv.className = 'ads';
+      adDiv.innerHTML = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6329597805915914" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>';
+      p.after(adDiv);
+      try {
+        if (window.adsbygoogle) {
+          window.adsbygoogle.push({});
+        }
+      } catch(e) {
+        console.error(e);
+      }
     }
   });
 });
