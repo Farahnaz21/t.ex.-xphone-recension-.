@@ -91,6 +91,8 @@
   </div>
 
   <h2>Batteritid</h2>
+  <p>Batteriet räcker lätt en hel dag vid normal användning, och snabbladdning gör att du snabbt är tillbaka i full kapacitet.</p>
+
   <h2>Prestanda</h2>
   <p>XPhone 12 hanterar appar och spel utan lagg. Den kraftfulla processorn gör multitasking smidigt.</p>
 
@@ -126,19 +128,17 @@ document.addEventListener('DOMContentLoaded', function() {
   // Dynamiska AdSense-annonser var 3:e paragraf
   const contentDiv = document.getElementById('article-content');
   const paragraphs = contentDiv.querySelectorAll('p');
-  paragraphs.forEach((p, index) => {
+  paragraphs.forEach(function(p, index) {
     if ((index + 1) % 3 === 0) {
       const adDiv = document.createElement('div');
       adDiv.className = 'ads';
-      adDiv.innerHTML = `
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-6329597805915914"
-             data-ad-slot="1234567890"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>`;
+      adDiv.innerHTML = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6329597805915914" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>';
       p.after(adDiv);
-      (adsbygoogle = window.adsbygoogle || []).push({});
+      try {
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      } catch(e) {
+        console.error(e);
+      }
     }
   });
 });
