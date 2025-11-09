@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="sv" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Recension: XPhone 12</title>
+
+  <meta name="description" content="En djupgående recension av XPhone 12 – kamera, batteritid, prestanda och prisvärdhet." />
+  <meta name="author" content="Redaktionen" />
+
   <style>
     body {
       font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -26,13 +30,12 @@
       padding: 20px;
     }
 
-    h2 {
-      font-size: 1.8rem;
+    h1, h2 {
       margin-bottom: 10px;
     }
 
     .meta {
-      color: #666666;
+      color: #666;
       font-size: 0.9rem;
       margin-bottom: 20px;
     }
@@ -67,7 +70,7 @@
       text-align: center;
       padding: 20px;
       font-size: 0.9rem;
-      color: #666666;
+      color: #666;
       border-top: 1px solid #ddd;
       margin-top: 40px;
     }
@@ -78,26 +81,22 @@
     }
 
     @media (max-width: 600px) {
-      h2 {
-        font-size: 1.5rem;
-      }
-      p {
-        font-size: 0.95rem;
-      }
-      #themeToggle {
-        width: 100%;
-      }
+      h2 { font-size: 1.5rem; }
+      p { font-size: 0.95rem; }
+      #themeToggle { width: 100%; }
     }
   </style>
 
   <!-- Google Ads script -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6329597805915914" crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6329597805915914"
+    crossorigin="anonymous"></script>
 </head>
+
 <body>
   <div class="container">
     <h1>Välkommen till min XPhone-recension!</h1>
     <p>Detta är en testversion av min GitHub Pages-sida.</p>
-    
+
     <h2>Recension: XPhone 12 — är den värd pengarna?</h2>
     <p class="meta">Publicerad 2025-10-01 · Av Redaktionen</p>
 
@@ -115,34 +114,36 @@
       <p>Slutsats: XPhone 12 är ett starkt val för den som vill ha hög prestanda och pålitlig batteritid.</p>
     </div>
 
-    <button id="themeToggle">Byt tema</button>
+    <button id="themeToggle" aria-label="Byt mellan ljust och mörkt tema">🌙 Mörkt läge</button>
 
-    <!-- Footer with links to privacy policy and contact page -->
     <footer>
       <p>&copy; <span id="year"></span> XPhone Recensioner. 
         <a href="contact.html">Kontakt</a> | 
-        <a href="privacy-policy.md">Integritetspolicy</a>
+        <a href="privacy-policy.html">Integritetspolicy</a>
       </p>
     </footer>
   </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Theme toggle
+      // Tema-knapp
       const themeToggle = document.getElementById('themeToggle');
       const savedTheme = localStorage.getItem('theme') || 'light';
       document.documentElement.setAttribute('data-theme', savedTheme);
+      themeToggle.textContent = savedTheme === 'dark' ? '☀️ Ljust läge' : '🌙 Mörkt läge';
 
       themeToggle.onclick = function() {
-        const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
+        themeToggle.textContent = newTheme === 'dark' ? '☀️ Ljust läge' : '🌙 Mörkt läge';
       };
 
-      // Set current year in footer
+      // År i footern
       document.getElementById('year').textContent = new Date().getFullYear();
 
-      // Add Google Ads after every third paragraph
+      // Google Ads var tredje paragraf
       const contentDiv = document.getElementById('article-content');
       const paragraphs = contentDiv.querySelectorAll('p');
       paragraphs.forEach((p, index) => {
@@ -152,10 +153,12 @@
           adDiv.innerHTML = `
             <ins class="adsbygoogle"
                  style="display:block"
+                 data-ad-client="ca-pub-6329597805915914"
+                 data-ad-slot="1234567890"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>`;
           p.after(adDiv);
-          (adsbygoogle = window.adsbygoogle || []).push({});
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
         }
       });
     });
