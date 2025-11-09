@@ -136,11 +136,9 @@ document.addEventListener('DOMContentLoaded', function() {
       adDiv.innerHTML = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6329597805915914" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>';
       p.after(adDiv);
       try {
-        if (window.adsbygoogle) {
-          window.adsbygoogle.push({});
-        }
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
       } catch(e) {
-        console.error(e);
+        console.error('Adsense push error:', e);
       }
     }
   });
